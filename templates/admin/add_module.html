@@ -1,0 +1,98 @@
+{% extends 'layouts/admin_master.html' %}
+
+
+
+{% block content %}
+
+
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Add Module</strong>
+                        </div>
+                        <div class="card-body">
+
+                            <div id="pay-invoice">
+                                <div class="card-body">
+
+
+                                    <form action="{% url 'saveModule'%}" method="post" >
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Name</label>
+                                                    <input id="cc-exp" name="name" type="text"
+                                                           class="form-control cc-exp"  placeholder="Name" required>
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                          data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Module Code</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="code" type="text"
+                                                           class="form-control cc-cvc" placeholder="Module Code" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Level</label>
+                                                    <select id="cc-exp" name="level"
+                                                           class="form-control cc-exp" placeholder="Level" required>
+                                                        <option>1.1</option>
+                                                        <option>1.2</option>
+                                                        <option>2.1</option>
+                                                        <option>2.2</option>
+                                                        <option>3.1</option>
+                                                        <option>3.2</option>
+                                                        <option>4.1</option>
+                                                        <option>4.2</option>
+                                                    </select>
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                          data-valmsg-replace="true"></span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Program</label>
+                                                <div class="input-group">
+                                                    <select id="cc-exp" name="program"
+                                                           class="form-control cc-exp" placeholder="Program" required>
+                                                        {% for program in programs %}
+                                                        <option>{{ program.name }}</option>
+                                                        {% endfor %}
+
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div>
+                                            <button id="payment-button" type="submit"
+                                                    class="btn btn-lg btn-info btn-block">
+                                                Save
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

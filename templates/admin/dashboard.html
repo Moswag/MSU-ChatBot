@@ -1,0 +1,124 @@
+{% extends 'layouts/admin_master.html' %}
+
+
+
+{% block content %}
+
+    <div class="content mt-3">
+        <div class="col-sm-12">
+            <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                {% if messages %}
+                            <div class="span12">
+                                {% for message in messages %}
+                                    <div class="alert alert-success">
+                                        {{ message|safe }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="card text-white bg-flat-color-1">
+                <div class="card-body pb-0">
+                    <div class="dropdown float-right">
+                        <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown">
+                            <i class="fa fa-cog"></i>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu-content">
+                                <a class="dropdown-item" href="#">Add Student</a>
+                                <a class="dropdown-item" href="#">View Students</a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mb-0">
+                        <span class="count">10468</span>
+                    </h4>
+                    <p class="text-light">Students</p>
+                    <div class="chart-wrapper px-0" style="height:70px;" height="70"/>
+                    <canvas id="widgetChart1"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="card text-white bg-flat-color-2">
+            <div class="card-body pb-0">
+                <div class="dropdown float-right">
+                    <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu-content">
+                            <a class="dropdown-item" href="#">Add Lecturer</a>
+                            <a class="dropdown-item" href="#">View Lecturers</a>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="mb-0">
+                    <span class="count">10468</span>
+                </h4>
+                <p class="text-light">Lecturers</p>
+                <div class="chart-wrapper px-0" style="height:70px;" height="70"/>
+                <canvas id="widgetChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="card text-white bg-flat-color-3">
+            <div class="card-body pb-0">
+                <div class="dropdown float-right">
+                    <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu-content">
+                            <a class="dropdown-item" href="#">Add Module</a>
+                            <a class="dropdown-item" href="#">View Modules</a>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="mb-0">
+                    <span class="count">10468</span>
+                </h4>
+                <p class="text-light">Modules</p>
+            </div>
+            <div class="chart-wrapper px-0" style="height:70px;" height="70"/>
+            <canvas id="widgetChart3"></canvas>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-3">
+        <div class="card text-white bg-flat-color-4">
+            <div class="card-body pb-0">
+                <div class="dropdown float-right">
+                    <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu-content">
+                            <a class="dropdown-item" href="#">Add Admin</a>
+                            <a class="dropdown-item" href="#">View Admins</a>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="mb-0">
+                    <span class="count">10468</span>
+                </h4>
+                <p class="text-light">Admins</p>
+                <div class="chart-wrapper px-3" style="height:70px;" height="70"/>
+                <canvas id="widgetChart4"></canvas>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

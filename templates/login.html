@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html class="no-js" lang="">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MSU</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-icon.html">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="static/assets/css/normalize.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="static/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="static/assets/css/cs-skin-elastic.css">
+
+    <link rel="stylesheet" href="static/assets/scss/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body class="bg-dark">
+<div class="sufee-login d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="login-content">
+
+            <div class="login-form">
+                 <div class="card-header">
+                            {% if messages %}
+                            <div class="span12">
+                                {% for message in messages %}
+                                    <div class="alert alert-success">
+                                        {{ message|safe }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        </div>
+                <div class="login-logo">
+                    <a href="">
+                        <img class="align-content" src="static/img/msu.png" alt="">
+                    </a>
+                </div>
+                <br>
+                <form method="post" action="/signin">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>Username/ Reg Number</label>
+                        <input type="text" name="email" class="form-control" placeholder="Reg Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember Me
+                        </label>
+                        <label class="pull-right">
+                            <a href="#">Forgotten Password?</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+
+                    <div class="register-link m-t-15 text-center">
+                        <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="static/assets/js/vendor/jquery-2.1.4.min.js" type="010c46e38be904e785df9a72-text/javascript"></script>
+<script src="static/assets/js/popper.min.js" type="010c46e38be904e785df9a72-text/javascript"></script>
+<script src="static/assets/js/plugins.js" type="010c46e38be904e785df9a72-text/javascript"></script>
+<script src="static/assets/js/main.js" type="010c46e38be904e785df9a72-text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+        type="010c46e38be904e785df9a72-text/javascript"></script>
+<script type="010c46e38be904e785df9a72-text/javascript">
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+
+</script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js"
+        data-cf-settings="010c46e38be904e785df9a72-|49" defer=""></script>
+</body>
+
+
+</html>
